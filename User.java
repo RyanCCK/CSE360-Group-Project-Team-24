@@ -21,4 +21,19 @@ public abstract class User
     {
         return name;
     }
+
+    public void setASURITEID(String newID)
+    {
+        ASURITEID = newID;
+    }
+
+    public void setPassword(String newPass)
+    {
+        password = newPass;
+    }
+
+    public void setName(String newName)
+    {
+        name = newName;
+    }
 }
