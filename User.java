@@ -1,8 +1,8 @@
 public abstract class User
 {
-    private String ASURITEID;
-    private String password;
-    private String name;
+    protected String ASURITEID;
+    protected String password;
+    protected String name;
 
     public abstract void login();
     public abstract void logout();
