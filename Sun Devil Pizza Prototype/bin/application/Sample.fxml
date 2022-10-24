@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Innovate-A-Pizza">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="16.0" layoutY="68.0" prefHeight="33.0" prefWidth="275.0" text="Pizza Size" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="pizzaSizeChoiceBox" layoutX="78.0" layoutY="109.0" prefWidth="150.0" />
+                        <Button fx:id="addToCartButton" alignment="CENTER" layoutX="255.0" layoutY="223.0" mnemonicParsing="false" onAction="#onAddToCart" prefHeight="49.0" prefWidth="90.0" text="Add To Cart" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="addedToCartLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="153.0" layoutY="281.0" prefHeight="17.0" prefWidth="294.0" textAlignment="CENTER" textFill="#0000009d">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="310.0" layoutY="68.0" prefHeight="33.0" prefWidth="275.0" text="Pizza Type" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="pizzaTypeChoiceBox" layoutX="372.0" layoutY="109.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Pizza Cart">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="pizzaCart" layoutX="200.0" layoutY="56.0" prefHeight="219.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" layoutX="163.0" layoutY="14.0" prefHeight="33.0" prefWidth="275.0" text="Pizza Cart" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="placeOrderButton" alignment="CENTER" layoutX="256.0" layoutY="292.0" mnemonicParsing="false" onAction="#onPlaceOrder" prefHeight="49.0" prefWidth="90.0" text="Place Order" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Track My Orders">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="163.0" layoutY="35.0" prefHeight="33.0" prefWidth="275.0" text="My Orders" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Accordion fx:id="myOrders" layoutX="199.0" layoutY="96.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
