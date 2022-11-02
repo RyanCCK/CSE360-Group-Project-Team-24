@@ -1,8 +1,8 @@
 public abstract class User
 {
-    private String ASURITEID;
-    private String password;
-    private String name;
+    protected String ASURITEID;
+    protected String password;
+    protected String name;
 
     public abstract void login();
     public abstract void logout();
@@ -20,5 +20,20 @@ public abstract class User
     public String name()
     {
         return name;
+    }
+
+    public void setASURITEID(String newID)
+    {
+        ASURITEID = newID;
+    }
+
+    public void setPassword(String newPass)
+    {
+        password = newPass;
+    }
+
+    public void setName(String newName)
+    {
+        name = newName;
     }
 }
