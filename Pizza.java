@@ -9,6 +9,7 @@ public class Pizza
     private boolean olives;
     private boolean extraCheese;
 
+    //default constructor
     public Pizza()
     {
         size = 0;
@@ -18,6 +19,7 @@ public class Pizza
         extraCheese = false;
     }
 
+    //constructor with parameters
     public Pizza(int size, String type, boolean mushroom, boolean onions, boolean olives, boolean extraCheese)
     {
         this.size = size;
@@ -28,6 +30,7 @@ public class Pizza
         this.extraCheese = extraCheese;
     }
 
+    //getters
     public int getSize()
     {
         return size;
@@ -58,6 +61,7 @@ public class Pizza
         return extraCheese;
     }
 
+    //setters
     public void setSize(int newSize)
     {
         size = newSize;
@@ -108,4 +112,5 @@ public class Pizza
         extraCheese = false;
     }
     
+    //more functions to be added by Tom
 }
