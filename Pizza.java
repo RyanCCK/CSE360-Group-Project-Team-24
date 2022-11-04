@@ -3,6 +3,7 @@ public class Pizza
     //need to come up with some prices
 
     private int size;
+    private int price;
     private String type;
     private boolean mushroom;
     private boolean onions;
@@ -12,6 +13,7 @@ public class Pizza
     //default constructor
     public Pizza()
     {
+        price = 0;
         size = 0;
         type = "";
         mushroom = false;
@@ -64,6 +66,14 @@ public class Pizza
     //setters
     public void setSize(int newSize)
     {
+        if(newSize <= 10){
+         price = 8;   
+        } 
+        else if(newSize <= 14){
+         price = 10;   
+        }else {
+         price = 12;   
+        }
         size = newSize;
     }
 
@@ -111,6 +121,7 @@ public class Pizza
     {
         extraCheese = false;
     }
+    
     
     //more functions to be added by Tom
 }
