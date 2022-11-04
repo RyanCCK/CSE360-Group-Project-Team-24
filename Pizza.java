@@ -84,44 +84,56 @@ public class Pizza
 
     public void addMushroom()
     {
+        price += 1;
         mushroom = true;
     }
 
     public void removeMushroom()
     {
+        price -= 1;
         mushroom = false;
     }
 
     public void addOnions()
     {
+        price += 1;
         onions = true;
     }
 
     public void removeOnions()
     {
+        price -= 1;
         onions = false;
     }
 
     public void addOlives()
     {
+        price += 1;
         olives = true;
     }
 
     public void removeOlives()
     {
+        price -= 1;
         olives = false;
     }
 
     public void addExtraCheese()
     {
+        price += 1;
         extraCheese = true;
     }
 
     public void removeExtraCheese()
     {
+        price -= 1;
         extraCheese = false;
     }
     
     
     //more functions to be added by Tom
+    public void getPrice()
+    {
+        return price;
+    }
 }
