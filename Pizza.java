@@ -3,7 +3,7 @@ public class Pizza
     //need to come up with some prices
 
     private int size;
-    private int price;
+    private double price;
     private String type;
     private boolean mushroom;
     private boolean onions;
@@ -132,7 +132,7 @@ public class Pizza
     
     
     //more functions to be added by Tom
-    public void getPrice()
+    public double getPrice()
     {
         return price;
     }
