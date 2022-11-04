@@ -2,8 +2,7 @@ public class Pizza
 {
     //need to come up with some prices
 
-    private int size;
-    private double price;
+    private String size;
     private String type;
     private boolean mushroom;
     private boolean onions;
@@ -13,8 +12,7 @@ public class Pizza
     //default constructor
     public Pizza()
     {
-        price = 0;
-        size = 0;
+        size = "";
         type = "";
         mushroom = false;
         olives = false;
@@ -22,10 +20,10 @@ public class Pizza
     }
 
     //constructor with parameters
-    public Pizza(int size, String type, boolean mushroom, boolean onions, boolean olives, boolean extraCheese)
+    public Pizza(String size, String type, boolean mushroom, boolean onions, boolean olives, boolean extraCheese)
     {
-        this.size = size;
-        this.type = type;
+        this.size = size.toUpperCase();
+        this.type = type.toUpperCase();
         this.mushroom = mushroom;
         this.onions = onions;
         this.olives = olives;
@@ -33,7 +31,7 @@ public class Pizza
     }
 
     //getters
-    public int getSize()
+    public String getSize()
     {
         return size;
     }
@@ -64,69 +62,54 @@ public class Pizza
     }
 
     //setters
-    public void setSize(int newSize)
+    public void setSize(String newSize)
     {
-        if(newSize <= 10){
-         price = 8;   
-        } 
-        else if(newSize <= 14){
-         price = 10;   
-        }else {
-         price = 12;   
-        }
-        size = newSize;
+        
+        size = newSize.toUpperCase();
     }
 
     public void setType(String newType)
     {
-        type = newType;
+        type = newType.toUpperCase();
     }
 
     public void addMushroom()
     {
-        price += 1;
         mushroom = true;
     }
 
     public void removeMushroom()
     {
-        price -= 1;
         mushroom = false;
     }
 
     public void addOnions()
     {
-        price += 1;
         onions = true;
     }
 
     public void removeOnions()
     {
-        price -= 1;
         onions = false;
     }
 
     public void addOlives()
     {
-        price += 1;
         olives = true;
     }
 
     public void removeOlives()
     {
-        price -= 1;
         olives = false;
     }
 
     public void addExtraCheese()
     {
-        price += 1;
         extraCheese = true;
     }
 
     public void removeExtraCheese()
     {
-        price -= 1;
         extraCheese = false;
     }
     
@@ -134,6 +117,50 @@ public class Pizza
     //more functions to be added by Tom
     public double getPrice()
     {
+        double price = 0;
+
+        //size prices
+        if(size.equals("SMALL"))
+        {
+            price += 5.0;
+        }
+        else if(size.equals("MEDIUM"))
+        {
+            price += 10.0;
+        }
+        else
+        {
+            price += 15.0;
+        }
+
+        //type prices
+        if(type.equals("PEPPERONI"))
+        {
+            price += 3;
+        }
+        else
+        {
+            price += 2;
+        }
+
+        //topping price
+        if(mushroom)
+        {
+            price++;
+        }
+        if(onions)
+        {
+            price++;
+        }
+        if(olives)
+        {
+            price++;
+        }
+        if(extraCheese)
+        {
+            price++;
+        }
+
         return price;
     }
 }
