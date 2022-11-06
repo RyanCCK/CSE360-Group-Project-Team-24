@@ -94,10 +94,10 @@ public class OrderList
 		for(int i=0; i<orderList.size(); ++i)
 		{
 			System.out.println("id: " + orderList.get(i).id);
-			System.out.println("number of pizzas: " + orderList.get(i).pizzas.length);
-			for (int j=0; j<orderList.get(i).pizzas.length; ++j)
+			System.out.println("number of pizzas: " + orderList.get(i).pizzas.size());
+			for (int j=0; j<orderList.get(i).pizzas.size(); ++j)
 			{
-				System.out.print(orderList.get(i).pizzas[j] + "\t");
+				System.out.print(orderList.get(i).pizzas.get(j) + "\t");
 			}
 			System.out.println("\n");
 		}
