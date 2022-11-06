@@ -56,6 +56,11 @@ public class Order implements Serializable, Comparable<Order>
 		return status;
 	}
 	
+	public int getID()
+	{
+		return id;
+	}
+
 	public int getCustID()
 	{
 		return customerID;

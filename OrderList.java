@@ -118,9 +118,17 @@ public class OrderList
 		return orderList;
 	}
 	
-	public Object getOrder()
+	public Order getOrder(int orderID)
 	{
-		return orderList;
+		for(Order o : orderList)
+		{
+			if(o.getID() == orderID)
+			{
+				return o;
+			}
+		}
+
+		return null;
 	}
 	
 	//Helper function to clear current contents of database file
