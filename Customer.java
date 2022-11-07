@@ -10,11 +10,13 @@ public class Customer extends User
 
     OrderList instance;
 
-    public Customer(String asuriteID, String password, String name)
+    public Customer(String asuriteID, String password, String name) throws ClassNotFoundException, IOException
     {
         super.ASURITEID = asuriteID;
         super.password = password;
         super.name = name;
+
+        instance = OrderList.getOrderList();
     }
 
     //getters
@@ -37,18 +39,7 @@ public class Customer extends User
 
         return orderID;
     }
-
-    //will later discuss how login/logout will work
-    public void login()
-    {
-
-    }
-
-    public void logout()
-    {
-
-    }
-
+    
     public void createOrder(int size, LocalTime time, int ASURITEID)
     {
         Random rand = new Random();
