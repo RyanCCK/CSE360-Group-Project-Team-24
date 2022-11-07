@@ -4,9 +4,6 @@ public abstract class User
     protected String password;
     protected String name;
 
-    public abstract void login();
-    public abstract void logout();
-
     public String getASURITEID()
     {
         return ASURITEID;
