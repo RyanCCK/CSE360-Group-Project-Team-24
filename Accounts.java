@@ -5,7 +5,7 @@ public class Accounts {
 	private static String[] employeeId = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 	private static String[] employeePassword = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 	
-	public boolean verifyCustomerLogin(String id, String password)
+	public static boolean verifyCustomerLogin(String id, String password)
 	{
 		boolean valid = false;
 		for (int i=0; i<databaseSize; ++i)
@@ -19,7 +19,7 @@ public class Accounts {
 		return valid;
 	}
 	
-	public boolean verifyEmployeeLogin(String id, String password)
+	public static boolean verifyEmployeeLogin(String id, String password)
 	{
 		boolean valid = false;
 		for (int i=0; i<databaseSize; ++i)
