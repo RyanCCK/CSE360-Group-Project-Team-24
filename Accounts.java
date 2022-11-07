@@ -1,35 +1,45 @@
+import java.util.HashMap;
+
 public class Accounts {
-	private static int databaseSize = 10;
-	private static String[] customerId = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-	private static String[] customerPassword = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
-	private static String[] employeeId = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-	private static String[] employeePassword = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
-	
-	public static boolean verifyCustomerLogin(String id, String password)
+
+	private static HashMap<String, Customer> customers = new HashMap<>();		//id to customer objects
+	private static HashMap<String, User> employees = new HashMap<>();
+
+	public static Customer verifyCustomerLogin(String id, String password)
 	{
-		boolean valid = false;
-		for (int i=0; i<databaseSize; ++i)
+		if(!customers.containsKey(id))
 		{
-			if (customerId[i].equals(id))
-			{
-				if (customerPassword[i].equals(password))
-					valid = true;
-			}
+			System.out.println("User does not exist");
+			return null;
 		}
-		return valid;
+		
+		Customer obj = customers.get(id);
+		if(!password.equals(obj.getPassword()))
+		{
+			System.out.println("Password is wrong");
+			return null;
+		}
+
+		return obj;
 	}
 	
-	public static boolean verifyEmployeeLogin(String id, String password)
+	public static User verifyEmployeeLogin(String id, String password)
 	{
-		boolean valid = false;
-		for (int i=0; i<databaseSize; ++i)
+		if(!employees.containsKey(id))
 		{
-			if (employeeId[i].equals(id))
-			{
-				if (employeePassword[i].equals(password))
-					valid = true;
-			}
+			System.out.println("User does not exist");
+			return null;
 		}
-		return valid;
+		
+		User obj = employees.get(id);
+		if(!password.equals(obj.getPassword()))
+		{
+			System.out.println("Password is wrong");
+			return null;
+		}
+
+		return obj;
 	}
+
+	//will need to add default user/passwords and methods to create new users
 }
