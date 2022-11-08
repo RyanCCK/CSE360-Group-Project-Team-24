@@ -42,25 +42,25 @@ public class Accounts {
 		return obj;
 	}
 
-	public static boolean addCustomer(String asuriteID, String password, String name) throws ClassNotFoundException, IOException
+	public static boolean addCustomer(Customer customer)
 	{
-		if(customers.containsKey(asuriteID))
+		if(customers.containsKey(customer.ASURITEID))
 		{
 			return false;
 		}
 
-		customers.put(asuriteID, new Customer(asuriteID, password, name));
+		customers.put(customer.ASURITEID, customer);
 		return true;
 	}
 
-	public static boolean addEmployee(String asuriteID, String password, String name)
+	public static boolean addEmployee(User chefOrCashier) //need to input a Chef or Cashier object
 	{
-		if(employees.containsKey(asuriteID))
+		if(employees.containsKey(chefOrCashier.ASURITEID))
 		{
 			return false;
 		}
 
-		employees.put(asuriteID, new User(asuriteID, password, name));
+		employees.put(chefOrCashier.ASURITEID, chefOrCashier);
 		return true;
 	}
 }
