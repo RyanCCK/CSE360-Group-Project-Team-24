@@ -3,9 +3,7 @@ public class Chef extends User
 {
 	public Chef(String asuriteID, String password, String name)	//constructor
 	{
-		super.ASURITEID = asuriteID;
-        super.password = password;
-        super.name = name;
+		super(asuriteID, password, name);
         
         //maybe instead of login/logout, we call the constructor 
         // with just asurite id and password, then it searches 

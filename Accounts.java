@@ -1,9 +1,10 @@
+import java.io.IOException;
 import java.util.HashMap;
 
 public class Accounts {
 
 	private static HashMap<String, Customer> customers = new HashMap<>();		//id to customer objects
-	private static HashMap<String, User> employees = new HashMap<>();
+	private static HashMap<String, User> employees = new HashMap<>();			//id to employee objects (chef & cashier)
 
 	public static Customer verifyCustomerLogin(String id, String password)
 	{
@@ -41,5 +42,25 @@ public class Accounts {
 		return obj;
 	}
 
-	//will need to add default user/passwords and methods to create new users
+	public static boolean addCustomer(String asuriteID, String password, String name) throws ClassNotFoundException, IOException
+	{
+		if(customers.containsKey(asuriteID))
+		{
+			return false;
+		}
+
+		customers.put(asuriteID, new Customer(asuriteID, password, name));
+		return true;
+	}
+
+	public static boolean addEmployee(String asuriteID, String password, String name)
+	{
+		if(employees.containsKey(asuriteID))
+		{
+			return false;
+		}
+
+		employees.put(asuriteID, new User(asuriteID, password, name));
+		return true;
+	}
 }

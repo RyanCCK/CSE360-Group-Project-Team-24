@@ -12,9 +12,7 @@ public class Customer extends User
 
     public Customer(String asuriteID, String password, String name) throws ClassNotFoundException, IOException
     {
-        super.ASURITEID = asuriteID;
-        super.password = password;
-        super.name = name;
+        super(asuriteID, password, name);
 
         instance = OrderList.getOrderList();
     }
