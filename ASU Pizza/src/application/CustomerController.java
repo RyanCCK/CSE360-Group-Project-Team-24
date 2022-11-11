@@ -4,10 +4,14 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.ResourceBundle;
 import javafx.scene.text.*;
+import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
@@ -58,6 +62,8 @@ public class CustomerController implements Initializable
 	private Text emptyOrderMessage;
 	@FXML
 	private TextField asuIdField;
+	@FXML
+	private Button logout;
 	@FXML
 	private ChoiceBox<LocalTime> pickupTimeBox;
 	@FXML
@@ -177,6 +183,20 @@ public class CustomerController implements Initializable
 		}
 	}
 	
+	/***************************************************************************************************************************************************
+	 * TRACK ORDER PAGE
+	 ***************************************************************************************************************************************************/
+	//Handles event where customer clicks the "logout" button
+	@FXML
+	public void onLogoutClick(ActionEvent event) {
+		try {
+			changeScene("Login.fxml", event);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	
 	/***************************************************************************************************************************************************
 	 * HELPER FUNCTIONS
@@ -202,5 +222,16 @@ public class CustomerController implements Initializable
 	private void setPickupTimeChoiceBox()
 	{
 		
+	}
+	
+	//Handles scene changes
+	private void changeScene(String fxml, ActionEvent event) throws IOException {
+		Stage stage;
+		Scene scene;
+		Parent root = FXMLLoader.load(getClass().getResource(fxml));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 }
