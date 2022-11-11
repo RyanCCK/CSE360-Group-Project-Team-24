@@ -5,17 +5,6 @@ public class Cashier extends User{
 	{
 		super(asuriteID, password, name);
 	}
-	
-	public void login() 
-	{
-		//login through data base
-	}
-	
-	public void logout()
-	{
-		//logout through database
-	}
-	
 	public void sendtoChef(Order order)
 	{
 		//send order details to chef method added later.
