@@ -1,8 +1,5 @@
-package application;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.io.*;
 
 //Singleton class that stores all orders in active memory
@@ -60,6 +57,9 @@ public class OrderList
 		objOut.close();
 	}
 	
+	//TODO:
+	//	Check that an Order has at least one pizza, an ASUID and a pickup time before inserting it
+	//
 	//Insert Order in the correct sorted position
 	public void insertOrder(Order order) throws IOException 
 	{
@@ -89,18 +89,22 @@ public class OrderList
 	}
 	
 	//for testing purposes
-	public void printOrderList()
+	public String toString()
 	{
+		String orderListString = "";
+		
 		for(int i=0; i<orderList.size(); ++i)
 		{
-			System.out.println("id: " + orderList.get(i).id);
-			System.out.println("number of pizzas: " + orderList.get(i).pizzas.size());
+			orderListString += ("id: " + orderList.get(i).id);
+			orderListString += ("number of pizzas: " + orderList.get(i).pizzas.size());
 			for (int j=0; j<orderList.get(i).pizzas.size(); ++j)
 			{
-				System.out.print(orderList.get(i).pizzas.get(j) + "\t");
+				orderListString += (orderList.get(i).pizzas.get(j) + "\t");
 			}
-			System.out.println("\n");
+			orderListString += ("\n");
 		}
+		
+		return orderListString;
 	}
 	
 	public ArrayList getCustomerOrderList(int customerID)
@@ -135,10 +139,10 @@ public class OrderList
 	private void clearFile() throws IOException
 	{
 		FileWriter fwOb = new FileWriter(filename, false); 
-        PrintWriter pwOb = new PrintWriter(fwOb, false);
-        pwOb.flush();
-        pwOb.close();
-        fwOb.close();
+        	PrintWriter pwOb = new PrintWriter(fwOb, false);
+        	pwOb.flush();
+        	pwOb.close();
+        	fwOb.close();
 		System.out.println("File contents cleared");
 	}
 }
