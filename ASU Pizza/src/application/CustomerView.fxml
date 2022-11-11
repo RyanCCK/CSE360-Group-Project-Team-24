@@ -266,6 +266,11 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </TitledPane>
+                        <Button id="logout" fx:id="logout" layoutX="1525.0" layoutY="423.0" mnemonicParsing="false" onAction="#onLogoutClick" text="Logout">
+                           <font>
+                              <Font name="System Bold" size="48.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
                </content>
             </Tab>
