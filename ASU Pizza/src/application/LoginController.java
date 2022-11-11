@@ -16,7 +16,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
-public class EmployeeController implements Initializable
+public class LoginController implements Initializable
 {
 
 	@Override
@@ -24,6 +24,5 @@ public class EmployeeController implements Initializable
 		// TODO Auto-generated method stub
 		
 	}
-	
 	
 }
