@@ -1,7 +1,5 @@
 public class Pizza
 {
-    //need to come up with some prices
-
     private String size;
     private String type;
     private boolean mushroom;
@@ -16,6 +14,7 @@ public class Pizza
         type = "";
         mushroom = false;
         olives = false;
+        onions = false;
         extraCheese = false;
     }
 
@@ -64,7 +63,6 @@ public class Pizza
     //setters
     public void setSize(String newSize)
     {
-        
         size = newSize.toUpperCase();
     }
 
@@ -72,49 +70,28 @@ public class Pizza
     {
         type = newType.toUpperCase();
     }
-
-    public void addMushroom()
+    
+    public void setMushroom(boolean bool)
     {
-        mushroom = true;
-    }
-
-    public void removeMushroom()
-    {
-        mushroom = false;
-    }
-
-    public void addOnions()
-    {
-        onions = true;
-    }
-
-    public void removeOnions()
-    {
-        onions = false;
-    }
-
-    public void addOlives()
-    {
-        olives = true;
-    }
-
-    public void removeOlives()
-    {
-        olives = false;
-    }
-
-    public void addExtraCheese()
-    {
-        extraCheese = true;
-    }
-
-    public void removeExtraCheese()
-    {
-        extraCheese = false;
+    	mushroom = bool;
     }
     
+    public void setOnions(boolean bool)
+    {
+    	onions = bool;
+    }
     
-    //more functions to be added by Tom
+    public void setOlives(boolean bool)
+    {
+    	olives = bool;
+    }
+    
+    public void setExtraCheese(boolean bool)
+    {
+    	extraCheese = bool;
+    }
+    
+    //calculate and return the price
     public double getPrice()
     {
         double price = 0;
