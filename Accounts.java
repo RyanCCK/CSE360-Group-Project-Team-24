@@ -63,4 +63,13 @@ public class Accounts {
 		employees.put(chefOrCashier.ASURITEID, chefOrCashier);
 		return true;
 	}
+
+	public static void loadDefaultUsers() throws ClassNotFoundException, IOException
+	{
+		customers.put("jdoe123", new Customer("jdoe123", "password", "John Doe"));
+		customers.put("jtest456", new Customer("jtest456", "12345", "Johnny Test"));
+
+		employees.put("rwater100", new Chef("rwater100", "waterfall", "Royce Waterfall"));
+		employees.put("gbox000", new Cashier("gbox000", "models", "George Box"));
+	}
 }
