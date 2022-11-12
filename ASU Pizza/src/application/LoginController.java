@@ -33,6 +33,12 @@ public class LoginController implements Initializable
 	private TextField empID;
 	@FXML
 	private PasswordField empPassword;
+	@FXML
+	private Text failText;
+	@FXML
+	private Text empFailText;
+	
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -62,6 +68,8 @@ public class LoginController implements Initializable
 		if (customer != null) {
 			CustomerController.setCustomer(customer);;	
 			changeScene("CustomerView.fxml", event);
+		} else {
+			failText.setVisible(true);
 		}
 	}
 	
@@ -75,6 +83,8 @@ public class LoginController implements Initializable
 		 if (user != null) {
 			 EmployeeController.setEmployee(user);
 			 changeScene("EmployeeView.fxml", event);
+		 } else {
+			 empFailText.setVisible(true);
 		 }
 	 }
 	
