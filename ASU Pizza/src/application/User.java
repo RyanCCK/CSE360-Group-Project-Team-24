@@ -1,8 +1,12 @@
-public class User
+import java.io.Serializable;
+
+public class User implements Serializable
 {
     protected String ASURITEID;
     protected String password;
     protected String name;
+    protected boolean isCashier = false;
+    protected boolean isChef = false;
 
     public User(String asuriteID, String password, String name)
     {
@@ -24,6 +28,16 @@ public class User
     public String name()
     {
         return name;
+    }
+
+    public boolean isCashier()
+    {
+        return isCashier;
+    }
+
+    public boolean isChef()
+    {
+        return isChef;
     }
 
     public void setASURITEID(String newID)
