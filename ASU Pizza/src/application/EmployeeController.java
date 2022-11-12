@@ -1,4 +1,4 @@
-import java.io.IOException;
+
 import java.time.LocalTime;
 import java.net.URL;
 import java.util.Collection;
@@ -18,6 +18,8 @@ import javafx.scene.paint.Color;
 
 public class EmployeeController implements Initializable
 {
+	private static Chef chef;
+	private static Cashier cashier;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -26,4 +28,16 @@ public class EmployeeController implements Initializable
 	}
 	
 	
+	
+	/***************************************************************************************************************************************************
+	 * HELPER FUNCTIONS
+	 ***************************************************************************************************************************************************/
+	public static void setEmployee(User emp) {
+		if (emp.isCashier()) {
+			cashier = (Cashier) emp;
+		} else if (emp.isChef()) {
+			chef = (Chef) emp;
+		}
+	}
+
 }
