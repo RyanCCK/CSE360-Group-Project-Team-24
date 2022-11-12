@@ -56,6 +56,8 @@ public class Accounts {
 		}
 
 		customers.put(customer.ASURITEID, customer);
+		Accounts.storeCustomers();
+
 		return true;
 	}
 
@@ -67,6 +69,8 @@ public class Accounts {
 		}
 
 		employees.put(chefOrCashier.ASURITEID, chefOrCashier);
+		Accounts.storeEmployees();
+
 		return true;
 	}
 
