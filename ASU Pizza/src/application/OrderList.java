@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.io.*;
 
 //Singleton class that stores all orders in active memory
-public class OrderList 
+public class OrderList implements Serializable
 {
 	private static OrderList instance = null;	//There will only be 1 instance of an OrderList
 	private ArrayList<Order> orderList;
