@@ -44,7 +44,7 @@ public class LoginController implements Initializable
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		Accounts.setUp();
-		try {
+		/* try {
 			Accounts.loadDefaultUsers();
 			Accounts.storeCustomers();
 			Accounts.storeEmployees();
@@ -55,7 +55,9 @@ public class LoginController implements Initializable
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		*/
+		Accounts.loadCustomers();
+		Accounts.loadEmployees();
 	}
 	
 	//Handles a user clicking on the customer login button
