@@ -107,19 +107,46 @@ public class OrderList implements Serializable
 		return orderListString;
 	}
 	
+	//Returns a sorted arraylist containing all orders with the given customer ID
 	public ArrayList getCustomerOrderList(int customerID)
 	{
-		return orderList;
+		ArrayList<Order> custList = new ArrayList<Order>();
+		
+		for (int i=0; i<orderList.size(); ++i)
+		{
+			if (orderList.get(i).getID() == customerID)
+				custList.add(orderList.get(i));
+		}
+		
+		return custList;
 	}
 	
+	//Returns a sorted arraylist containing all orders that display to the cashier
 	public ArrayList getCashierOrderList()
 	{
-		return orderList;
+		ArrayList<Order> cashList = new ArrayList<Order>();
+		
+		for (int i=0; i<orderList.size(); ++i)
+		{
+			if (orderList.get(i).getStatus().equals("NOT STARTED") || orderList.get(i).getStatus().equals("READY"))
+				cashList.add(orderList.get(i));
+		}
+		
+		return cashList;
 	}
 	
+	//Returns a sorted arraylist containing all orders that display to the chef
 	public ArrayList getChefOrderList()
 	{
-		return orderList;
+		ArrayList<Order> chefList = new ArrayList<Order>();
+		
+		for (int i=0; i<orderList.size(); ++i)
+		{
+			if (orderList.get(i).getStatus().equals("READY TO COOK") || orderList.get(i).getStatus().equals("COOKING"))
+				chefList.add(orderList.get(i));
+		}
+		
+		return chefList;
 	}
 	
 	public Order getOrder(int orderID)
