@@ -3,8 +3,8 @@ import java.util.HashMap;
 
 public class Accounts {
 
-	private static HashMap<String, Customer> customers;		//id to customer objects
-	private static HashMap<String, User> employees;			//id to employee objects (chef & cashier)
+	public static HashMap<String, Customer> customers;		//id to customer objects
+	public static HashMap<String, User> employees;			//id to employee objects (chef & cashier)
 
 	public static void setUp()
 	{
