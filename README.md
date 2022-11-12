@@ -27,6 +27,7 @@ replacing "PATH-TO-LIB" with the path to the /lib fdirectory in the JavaFX folde
 
 Next, run the program in Eclipse.
 
-To log in as a customer, use the username "jode123", and the password "password", then click the login button.
+To log in as a customer, use the username "jdoe123", and the password "password", then click the login button.
 
-To log in as an employee, navigate to the employee tab at the top left and use the username "rwater100" and the password "waterfall".
+To log in as a chef employee, navigate to the employee tab at the top left and use the username "rwater100" and the password "waterfall".
+To log in as a cashier employee, navigate to the employee tab at the top left and use the username "gbox000" and the password "models".
