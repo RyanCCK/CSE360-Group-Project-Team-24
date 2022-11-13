@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EmployeeController">
    <center>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Cashier">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8C1D40;">
                      <children>
                         <Accordion layoutX="14.0" layoutY="14.0" prefHeight="927.0" prefWidth="901.0">
                           <panes>
@@ -26,14 +26,19 @@
                             </TitledPane>
                           </panes>
                         </Accordion>
-                        <Button layoutX="1413.0" layoutY="751.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="346.0" text="Mark as Picked-Up">
+                        <Button id="markPickup" fx:id="markPickup" layoutX="1412.0" layoutY="751.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="346.0" text="Mark as Picked-Up">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Button>
-                        <Button layoutX="1412.0" layoutY="528.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="347.0" text="Send to Kitchen">
+                        <Button id="sendKitchen" fx:id="sendKitchen" layoutX="1412.0" layoutY="528.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="347.0" text="Send to Kitchen">
                            <font>
                               <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button id="logout" fx:id="logout" layoutX="1573.0" layoutY="46.0" mnemonicParsing="false" onAction="#Logout" text="Logout">
+                           <font>
+                              <Font size="36.0" />
                            </font>
                         </Button>
                      </children></AnchorPane>
@@ -41,14 +46,14 @@
           </Tab>
           <Tab text="Chef">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8C1D40;">
                      <children>
-                        <Button layoutX="1423.0" layoutY="761.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="346.0" text="Mark as Finished">
+                        <Button id="markFinished" fx:id="markFinished" layoutX="1412.0" layoutY="751.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="346.0" text="Mark as Finished">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Button>
-                        <Button layoutX="1422.0" layoutY="538.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="347.0" text="Mark As Cooking">
+                        <Button id="markCooking" fx:id="markCooking" layoutX="1412.0" layoutY="528.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="347.0" text="Mark As Cooking">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -62,6 +67,11 @@
                               </TitledPane>
                            </panes>
                         </Accordion>
+                        <Button id="logout1" fx:id="logout1" layoutX="1573.0" layoutY="46.0" mnemonicParsing="false" onAction="#Logout" text="Logout">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
             </content>
           </Tab>
