@@ -70,17 +70,13 @@ public class CustomerController extends ListCell<Pizza> implements Initializable
 	@FXML
 	private TextField asuIdField;
 	@FXML
-	private Button logout;
-	@FXML
 	private ChoiceBox<LocalTime> pickupTimeBox;
 	@FXML
 	private ListView<Pizza> pizzasList;
 	//Order tracker
 	@FXML
 	private ListView<Order> ordersDisplayList;
-	//Logout
-	@FXML
-	private Button logout;
+
 	
 	private static Customer customer;
 	private Pizza pizza;
