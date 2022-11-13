@@ -25,18 +25,18 @@
                         <PasswordField id="password" fx:id="password" layoutX="922.0" layoutY="539.0" promptText="Password" />
                         <Label layoutX="841.0" layoutY="502.0" text="ASURITE ID" />
                         <Label layoutX="844.0" layoutY="543.0" text="Password" />
-                        <ImageView fitHeight="236.0" fitWidth="273.0" layoutX="832.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="230.0" fitWidth="270.0" layoutX="853.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="file:pizza.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="793.0" layoutY="714.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sun Devil Pizza">
+                        <Text layoutX="800.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sun Devil Pizza">
                            <font>
                               <Font name="System Bold" size="47.0" />
                            </font>
                         </Text>
                         <Button id="custLogin" fx:id="custLogin" layoutX="934.0" layoutY="588.0" mnemonicParsing="false" onAction="#onCustLogin" text="Login" />
-                        <Text id="failText" fx:id="failText" fill="RED" layoutX="820.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username/Password Incorrect" visible="false" wrappingWidth="320.9921875">
+                        <Text id="failText" fx:id="failText" fill="RED" layoutX="809.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username/Password Incorrect" visible="false" wrappingWidth="320.9921875">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -49,22 +49,22 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField id="empID" fx:id="empID" layoutX="924.0" layoutY="522.0" promptText="Employee ID" />
-                        <PasswordField id="empPassword" fx:id="empPassword" layoutX="922.0" layoutY="563.0" promptText="Password" />
-                        <Label layoutX="841.0" layoutY="526.0" text="Employee ID" />
-                        <Label layoutX="844.0" layoutY="567.0" text="Password" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="885.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+                        <TextField id="empID" fx:id="empID" layoutX="924.0" layoutY="498.0" promptText="Employee ID" />
+                        <PasswordField id="empPassword" fx:id="empPassword" layoutX="922.0" layoutY="539.0" promptText="Password" />
+                        <Label layoutX="841.0" layoutY="502.0" text="Employee ID" />
+                        <Label layoutX="844.0" layoutY="543.0" text="Password" />
+                        <ImageView fitHeight="230.0" fitWidth="270.0" layoutX="853.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="file:pizza.png" />
                            </image>
                         </ImageView>
-                        <Text layoutX="793.0" layoutY="688.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sun Devil Pizza">
+                        <Text layoutX="800.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sun Devil Pizza">
                            <font>
                               <Font name="System Bold" size="47.0" />
                            </font>
                         </Text>
-                        <Button id="empLogin" fx:id="empLogin" layoutX="934.0" layoutY="612.0" mnemonicParsing="false" onAction="#onEmployeeLogin" text="Login" />
-                        <Text id="empFailText" fx:id="empFailText" fill="RED" layoutX="822.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username/Password Incorrect" visible="false">
+                        <Button id="empLogin" fx:id="empLogin" layoutX="934.0" layoutY="588.0" mnemonicParsing="false" onAction="#onEmployeeLogin" text="Login" />
+                        <Text id="empFailText" fx:id="empFailText" fill="RED" layoutX="809.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username/Password Incorrect" visible="false">
                            <font>
                               <Font size="24.0" />
                            </font>
