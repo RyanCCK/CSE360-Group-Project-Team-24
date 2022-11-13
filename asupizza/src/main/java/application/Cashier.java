@@ -1,3 +1,4 @@
+package application;
 public class Cashier extends User{
 
 	public Cashier(String asuriteID, String password, String name) 
