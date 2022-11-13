@@ -1,4 +1,6 @@
-public class Pizza
+import java.io.Serializable;
+
+public class Pizza implements Serializable
 {
     private String size;
     private String type;
@@ -50,7 +52,7 @@ public class Pizza
         return onions;
     }
 
-    public boolean hashOlives()
+    public boolean hasOlives()
     {
         return olives;
     }
