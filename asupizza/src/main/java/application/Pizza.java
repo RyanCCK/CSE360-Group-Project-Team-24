@@ -51,7 +51,7 @@ public class Pizza
         return onions;
     }
 
-    public boolean hashOlives()
+    public boolean hasOlives()
     {
         return olives;
     }

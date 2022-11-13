@@ -70,7 +70,7 @@ public class CustomerController implements Initializable
 	@FXML
 	private ListView<Pizza> pizzasList;
 	
-	private Customer customer;
+	private static Customer customer;
 	private Pizza pizza;
 	private String message = "";
 	private double subtotal;
@@ -86,12 +86,7 @@ public class CustomerController implements Initializable
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
-	{
-		try {
-			customer = new Customer("testID", "testPassword", "testName");	//TODO: set customer properly based on login information
-		} catch (ClassNotFoundException | IOException e) {
-			e.printStackTrace();
-		}	
+	{	
 		pizza = new Pizza();
 		setPickupTimeChoiceBox();
 		orderMessage.setText("");
@@ -234,5 +229,9 @@ public class CustomerController implements Initializable
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
+	}
+	
+	public static void setCustomer(Customer cust) {
+		customer = cust;
 	}
 }

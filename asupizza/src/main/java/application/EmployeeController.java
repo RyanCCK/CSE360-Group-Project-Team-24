@@ -1,7 +1,9 @@
 package application;
-import java.io.IOException;
+
 import java.time.LocalTime;
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.ResourceBundle;
 import javafx.scene.text.*;
@@ -19,12 +21,37 @@ import javafx.scene.paint.Color;
 
 public class EmployeeController implements Initializable
 {
+	private static User employee;
+	private OrderList orderList;
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
+		try {
+			orderList = OrderList.getOrderList();
+		} catch (ClassNotFoundException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
+	
+	/***************************************************************************************************************************************************
+	 * HELPER FUNCTIONS
+	 ***************************************************************************************************************************************************/
+	public static void setEmployee(User emp) {
+		employee = emp;
+	}
+	
+	private ArrayList<Order> getCashierList() {
+		ArrayList<Order> cashierList = orderList.getCashierOrderList();
+		return cashierList;
+	}
+	
+	private ArrayList<Order> getChefList() {
+		ArrayList<Order> chefList = orderList.getChefOrderList();
+		return chefList;
+	}
+
 }

@@ -12,11 +12,9 @@ import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
-	public Stage primaryStage;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			this.primaryStage = primaryStage;
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Login.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("CustomerView.fxml").toExternalForm());
