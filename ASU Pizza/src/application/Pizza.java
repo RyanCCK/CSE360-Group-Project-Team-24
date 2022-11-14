@@ -142,4 +142,24 @@ public class Pizza implements Serializable
 
         return price;
     }
+    
+    public String toString() {
+		String pizza = "Size: " + size;
+		pizza += "\nType: " + type;
+		pizza += "\nToppings:\t";
+		if (mushroom) {
+			pizza += "Mushrooms";
+		}
+		if (onions) {
+			pizza += "\n\tOnions";
+		}
+		if(olives) {
+			pizza += "\n\tOlives";
+		}
+		if(extraCheese) {
+			pizza += "\n\tExtraCheese";
+		}
+    	
+    	return pizza;
+    }
 }
