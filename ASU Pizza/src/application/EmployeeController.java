@@ -49,6 +49,7 @@ public class EmployeeController implements Initializable
 			cashList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 			chefList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 			updateCashierList();
+			updateChefList();
 		} catch (ClassNotFoundException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,10 +62,15 @@ public class EmployeeController implements Initializable
 	 ***************************************************************************************************************************************************/
 	public void sendToKitchen() {
 		int selectedIndex = cashList.getSelectionModel().getSelectedIndex();
+		getCashierList().get(selectedIndex).setStatus("READY TO COOK");
+		updateCashierList();
+		updateChefList();
 	}
 	
 	public void markPickedUp() {
-		
+		int selectedIndex = cashList.getSelectionModel().getSelectedIndex();
+		getCashierList().get(selectedIndex).setStatus("PICKED UP");
+		updateCashierList();
 	}
 	
 	
@@ -74,10 +80,19 @@ public class EmployeeController implements Initializable
 	 *  
 	 ***************************************************************************************************************************************************/
 	public void markCooking() {
-		
+		int selectedIndex = chefList.getSelectionModel().getSelectedIndex();
+		getChefList().get(selectedIndex).setStatus("COOKING");
+		updateChefList();
 	}
 	
 	public void markDone() {
+		int selectedIndex = chefList.getSelectionModel().getSelectedIndex();
+		
+		if (getChefList().get(selectedIndex).getStatus().equals("COOKING")) {
+			getChefList().get(selectedIndex).setStatus("READY");		
+			updateChefList();
+			updateCashierList();
+		}
 		
 	}
 	
@@ -106,6 +121,14 @@ public class EmployeeController implements Initializable
 	private ArrayList<Order> getChefList() {
 		ArrayList<Order> chefList = orderList.getChefOrderList();
 		return chefList;
+	}
+	
+	private void updateChefList() {
+		chefList.getItems().clear();
+		for (int i = 0; i < getChefList().size(); i++) {
+			chefList.getItems().add(getChefList().get(i));
+			System.out.println(i);
+		}
 	}
 	
 	public void Logout(ActionEvent event) throws IOException {
