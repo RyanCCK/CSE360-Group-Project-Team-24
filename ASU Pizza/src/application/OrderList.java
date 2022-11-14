@@ -8,7 +8,7 @@ public class OrderList implements Serializable
 	//private static final long serialVersionUid = -2215140946170431079;
 	private static OrderList instance = null;	//There will only be 1 instance of an OrderList
 	private ArrayList<Order> orderList;
-	private static String filename = "database.txt";
+	private static String filename = "database.ser";
 	private File file = new File(filename);
 	
 	//private constructor
@@ -41,8 +41,8 @@ public class OrderList implements Serializable
 			
 			orderList = (ArrayList<Order>) objIn.readObject();
 			
-			fileIn.close();
 			objIn.close();
+			fileIn.close();
 		}
 	}
 	
@@ -54,8 +54,8 @@ public class OrderList implements Serializable
 
 		objOut.writeObject(orderList);
 		
-		fileOut.close();
 		objOut.close();
+		fileOut.close();
 	}
 	
 	//TODO:
