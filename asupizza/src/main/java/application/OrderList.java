@@ -6,6 +6,7 @@ import java.io.*;
 //Singleton class that stores all orders in active memory
 public class OrderList implements Serializable
 {
+	//private static final long serialVersionUid = -2215140946170431079;
 	private static OrderList instance = null;	//There will only be 1 instance of an OrderList
 	private ArrayList<Order> orderList;
 	private static String filename = "database.txt";
@@ -129,7 +130,7 @@ public class OrderList implements Serializable
 		
 		for (int i=0; i<orderList.size(); ++i)
 		{
-			if (orderList.get(i).getStatus().equals("NOT STARTED") || orderList.get(i).getStatus().equals("READY"))
+			if (orderList.get(i).getStatus().equals("Not Started") || orderList.get(i).getStatus().equals("READY"))
 				cashList.add(orderList.get(i));
 		}
 		

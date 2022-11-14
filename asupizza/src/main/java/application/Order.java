@@ -22,7 +22,7 @@ public class Order implements Serializable, Comparable<Order>
 	{
 		this.customerID = customerID;
 		pizzas = new ArrayList<Pizza>();
-		status = "Not Started";
+		status = "NOT STARTED";
 		cost = 0.00;
 		id = rand.nextInt(100000000);      //creates random 8 digit number
         //TODO: Check for duplicate ID's
@@ -30,6 +30,7 @@ public class Order implements Serializable, Comparable<Order>
 	
 	public void calculateCost()
 	{
+		cost = 0;
 		for(int i = 0; i < pizzas.size(); i++)
 		{
 			cost += pizzas.get(i).getPrice();
@@ -78,12 +79,9 @@ public class Order implements Serializable, Comparable<Order>
 		this.calculateCost();
 	}
 	
+	//Compares the pickup times of orders
 	@Override
 	public int compareTo(Order o) {
-		if (this.id> o.id)
-			return 1;
-		else if (this.id< o.id)
-			return -1;
-		else return 0;
+		return this.pickupTime.compareTo(o.pickupTime);
 	}
 }

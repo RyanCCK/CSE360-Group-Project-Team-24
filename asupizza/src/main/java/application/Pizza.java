@@ -1,5 +1,7 @@
 package application;
-public class Pizza
+import java.io.Serializable;
+
+public class Pizza implements Serializable
 {
     private String size;
     private String type;
@@ -140,5 +142,25 @@ public class Pizza
         }
 
         return price;
+    }
+    
+    public String toString() {
+		String pizza = "Size: " + size;
+		pizza += "\nType: " + type;
+		pizza += "\nToppings:\t";
+		if (mushroom) {
+			pizza += "Mushrooms";
+		}
+		if (onions) {
+			pizza += "\n\tOnions";
+		}
+		if(olives) {
+			pizza += "\n\tOlives";
+		}
+		if(extraCheese) {
+			pizza += "\n\tExtraCheese";
+		}
+    	
+    	return pizza;
     }
 }

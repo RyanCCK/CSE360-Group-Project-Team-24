@@ -23,7 +23,9 @@ public class Customer extends User
     //Submit the customer's current order to the orderList
     public void submitOrder() throws IOException
     {
-    	orderList.insertOrder(order);
+    	Order submissionOrder = new Order(ASURITEID);
+    	submissionOrder = order;
+    	orderList.insertOrder(submissionOrder);
         order = new Order(ASURITEID);	//reset the customer's current order 
     }
 }

@@ -31,3 +31,7 @@ To log in as a customer, use the username "jdoe123", and the password "password"
 
 To log in as a chef employee, navigate to the employee tab at the top left and use the username "rwater100" and the password "waterfall".
 To log in as a cashier employee, navigate to the employee tab at the top left and use the username "gbox000" and the password "models".
+
+When submitting an order as a customer, use the username "jdoe123" as the ASU ID.
+
+To view orders in process, log in as either a chef or cashier employee.
