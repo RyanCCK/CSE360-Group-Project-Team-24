@@ -203,6 +203,7 @@ public class CustomerController extends ListCell<Pizza> implements Initializable
 		//If required conditions are met, finalize and submit the order
 		else
 		{
+			customer.getOrder().setTime(pickupTimeBox.getValue());
 			try 
 			{
 				customer.submitOrder();

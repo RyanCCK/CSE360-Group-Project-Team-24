@@ -1,8 +1,10 @@
+package application;
 import java.io.File;  //To Create New File
 import java.io.IOException;
 import java.io.FileWriter;
-public class Thankyou {
 /*
+public class Thankyou {
+
 	public static void Customer(String CustomerName, String OrderPizza)
 	{
 		
