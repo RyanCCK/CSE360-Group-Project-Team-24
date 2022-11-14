@@ -1,4 +1,4 @@
-import java.io.File;  
+import java.io.File;  //To Create New File
 import java.io.IOException;
 import java.io.FileWriter;
 public class Thankyou {
