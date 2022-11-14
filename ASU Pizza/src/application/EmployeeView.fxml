@@ -18,12 +18,12 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8C1D40;">
                      <children>
-                        <Button id="markPickup" fx:id="markPickup" layoutX="1412.0" layoutY="751.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="346.0" text="Mark as Picked-Up">
+                        <Button id="markPickup" fx:id="markPickup" layoutX="1412.0" layoutY="751.0" mnemonicParsing="false" onAction="#markPickedUp" prefHeight="160.0" prefWidth="346.0" text="Mark as Picked-Up">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Button>
-                        <Button id="sendKitchen" fx:id="sendKitchen" layoutX="1412.0" layoutY="528.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="347.0" text="Send to Kitchen">
+                        <Button id="sendKitchen" fx:id="sendKitchen" layoutX="1412.0" layoutY="528.0" mnemonicParsing="false" onAction="#sendToKitchen" prefHeight="160.0" prefWidth="347.0" text="Send to Kitchen">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -52,12 +52,12 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8C1D40;">
                      <children>
-                        <Button id="markFinished" fx:id="markFinished" layoutX="1412.0" layoutY="751.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="346.0" text="Mark as Finished">
+                        <Button id="markFinished" fx:id="markFinished" layoutX="1412.0" layoutY="751.0" mnemonicParsing="false" onAction="#markDone" prefHeight="160.0" prefWidth="346.0" text="Mark as Finished">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Button>
-                        <Button id="markCooking" fx:id="markCooking" layoutX="1412.0" layoutY="528.0" mnemonicParsing="false" prefHeight="160.0" prefWidth="347.0" text="Mark As Cooking">
+                        <Button id="markCooking" fx:id="markCooking" layoutX="1412.0" layoutY="528.0" mnemonicParsing="false" onAction="#markCooking" prefHeight="160.0" prefWidth="347.0" text="Mark As Cooking">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>

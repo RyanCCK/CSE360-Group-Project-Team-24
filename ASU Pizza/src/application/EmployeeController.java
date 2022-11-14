@@ -1,12 +1,10 @@
 
-import java.time.LocalTime;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.ResourceBundle;
-import javafx.scene.text.*;
 import javafx.stage.Stage;
+//import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,12 +13,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
+import javafx.scene.control.SelectionMode;
 
 public class EmployeeController implements Initializable
 {
@@ -39,12 +33,22 @@ public class EmployeeController implements Initializable
 	private Button logout;
 	@FXML
 	private Button logout1;
+	@FXML
+	private ListView<Order> cashList;
+	@FXML
+	private ListView<Order> chefList;
 	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		try {
 			orderList = OrderList.getOrderList();
+			orderList.loadOrderList();
+			cashList.setCellFactory(new OrderCellFactory());
+			chefList.setCellFactory(new OrderCellFactory());
+			cashList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+			chefList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+			updateCashierList();
 		} catch (ClassNotFoundException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -55,7 +59,27 @@ public class EmployeeController implements Initializable
 	 * CASHIER FUNCTIONS
 	 *  
 	 ***************************************************************************************************************************************************/
+	public void sendToKitchen() {
+		int selectedIndex = cashList.getSelectionModel().getSelectedIndex();
+	}
 	
+	public void markPickedUp() {
+		
+	}
+	
+	
+	
+	/***************************************************************************************************************************************************
+	 * CHEF FUNCTIONS
+	 *  
+	 ***************************************************************************************************************************************************/
+	public void markCooking() {
+		
+	}
+	
+	public void markDone() {
+		
+	}
 	
 	
 	/***************************************************************************************************************************************************
@@ -68,6 +92,15 @@ public class EmployeeController implements Initializable
 	private ArrayList<Order> getCashierList() {
 		ArrayList<Order> cashierList = orderList.getCashierOrderList();
 		return cashierList;
+	}
+	
+	private void updateCashierList() {
+		cashList.getItems().clear();
+		//cashList.getItems().add(orderList.orderList.get(0).pizzas.get(0));
+		//System.out.println(orderList.orderList.get(0).getStatus());
+		for(int i = 0; i < getCashierList().size(); i++) {
+			cashList.getItems().add(getCashierList().get(i));
+		}
 	}
 	
 	private ArrayList<Order> getChefList() {
