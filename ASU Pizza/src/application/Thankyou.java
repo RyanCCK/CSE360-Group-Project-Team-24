@@ -2,8 +2,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
 public class Thankyou {
-
-	
 	
 	public static void Customer(String CustomerName, String OrderPizza)
 	{
@@ -24,8 +22,6 @@ public class Thankyou {
 		    }
 		  }
 		}
-	
-	
 	
 	 class WriteToFile {
 		  public static void main(String[] args) {
